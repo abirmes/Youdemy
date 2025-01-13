@@ -8,10 +8,24 @@ class Cour
     private string $enseignant;
     private string $contenu;
     private Categorie $categorie;
+    // private array $utilisateurs = [];
     private array $tags = [];
 
 
     public function __construct() {}
+
+    public function __call($name , $args)
+    {
+        if ($name == "instanceWithoutId")
+        {
+            $this->titre = $args[0];
+            $this->description = $args[1];
+            $this->enseignant = $args[2];
+            $this->contenu = $args[3];
+            $this->categorie = $args[4];
+            $this->tags = $args[5];
+        }
+    }
 
 
     public function setId(int $id): void

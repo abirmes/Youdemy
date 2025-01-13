@@ -12,6 +12,7 @@ class Utilisateur {
     private string $phone = "";
     private string $photo = "";
     private Role $role;
+    private string $etat = "";
     private $cours = [];
     private int $role_id = 0;
 
@@ -48,6 +49,9 @@ class Utilisateur {
     public function setRole(Role $role):void {
         $this->role = $role;
     }
+    public function setEtat(string $etat):void {
+        $this->etat = $etat;
+    }
 
     public function setcours(array $cours):void {
         $this->cours = $cours;
@@ -80,6 +84,9 @@ class Utilisateur {
     public function getRole(): Role {
         return $this->role;
     }
+    public function getetat(): string {
+        return $this->etat;
+    }
 
     public function getcours(): array {
         return $this->cours;
@@ -94,14 +101,9 @@ class Utilisateur {
     }
 
 
-    public function toStringWithFirstnameAndLastname() {    
-        return "(Utilisateur) => id : " . $this->id . " , firstname : " . $this->firstname . " , lastname : " . $this->lastname ;
-    }
-
-
-    public function __toString() {
-        return $this->toStringWithFirstnameAndLastname() . 
-        " , phone : " .$this->phone . " , email : " . $this->email  . " , password : " . $this->password . " photo : " . $this->photo . " , Role : " . $this->role . " , cours : [" . implode(",", $this->cours)."] , Role_ID : " . $this->role_id . "" ;
+    public function __toString()
+    {
+        
     }
 
     

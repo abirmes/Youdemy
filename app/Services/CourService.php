@@ -15,7 +15,6 @@ class CourService
 
     public function createCour(Cour $cour)
     {
-        // $categorie 
         $cour->setCategorie($this->categorieService->findCategorieByName($cour->getCategorie()->getName()));
 
         return $this->courRepository->create($cour);

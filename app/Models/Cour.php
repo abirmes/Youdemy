@@ -2,28 +2,33 @@
 
 class Cour
 {
-    private int $id;
+    private int $id = 0;
     private string $titre;
     private string $description;
     private string $enseignant;
     private string $contenu;
     private Categorie $categorie;
-    // private array $utilisateurs = [];
+    private array $utilisateurs = [];
     private array $tags = [];
 
 
     public function __construct() {}
 
-    public function __call($name , $args)
+    public function __call($name, $args)
     {
-        if ($name == "instanceWithoutId")
-        {
-            $this->titre = $args[0];
-            $this->description = $args[1];
-            $this->enseignant = $args[2];
-            $this->contenu = $args[3];
-            $this->categorie = $args[4];
-            $this->tags = $args[5];
+        if ($name == "instanceWithoutId") {
+            if (count($args) == 7) {
+
+                $this->titre = $args[0];
+                $this->description = $args[1];
+                $this->enseignant = $args[2];
+                $this->contenu = $args[3];
+                $this->categorie = $args[4];
+                $this->utilisateurs = $args[5];
+                $this->tags = $args[6];
+
+
+            }
         }
     }
 
@@ -51,6 +56,10 @@ class Cour
     public function setTag(array $tags): void
     {
         $this->tags = $tags;
+    }
+    public function setUtilisateur(array $utilisateurs): void
+    {
+        $this->utilisateurs = $utilisateurs;
     }
     public function setCategorie(Categorie $categorie): void
     {
@@ -81,6 +90,10 @@ class Cour
     {
         return $this->tags;
     }
+    public function getUtilisateur(): array
+    {
+        return $this->utilisateurs;
+    }
     public function getCategorie(): Categorie
     {
         return $this->categorie;
@@ -89,6 +102,10 @@ class Cour
 
     public function __toString()
     {
-        
+        return "(Livre) => id : " . $this->id . " , titre : "
+            . $this->titre . " , description: "
+            . $this->description . " , enseignant: " . $this->enseignant .
+            " , contenu: " . $this->contenu . " , categorie: " . $this->categorie . " , tags: " . implode(" , ", $this->tags) 
+            . " , utilisateurs: " . implode(" , ", $this->utilisateurs). ".";
     }
 }

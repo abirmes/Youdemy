@@ -4,9 +4,9 @@
 
 abstract class Caracteristiques
 {
-    protected int $id;
-    protected string $name;
-    protected string $description;
+    protected int $id =0;
+    protected string $name = "";
+    protected string $description = "";
 
 
     public function __construct(){}

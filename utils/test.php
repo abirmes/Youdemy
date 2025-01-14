@@ -14,6 +14,12 @@ include './../app/DAOs/TagDAO.php';
 include './../app/Repositories/Implementations/TagRepository.php';
 include './../app/Services/TagService.php';
 include './../app/Controllers/TagController.php';
+include_once './../app/Models/Role.php';
+
+include './../app/DAOs/RoleDAO.php';
+include './../app/Repositories/Implementations/RoleRepository.php';
+include './../app/Services/RoleService.php';
+include './../app/Controllers/RoleController.php';
 
 
 
@@ -54,5 +60,13 @@ class Test
         $tagController = new TagController;
         $tagController->createTag();
 
+    }
+
+    public function testRole()
+    {
+
+        $roleController = new RoleController();
+        $roleController->createRole();
+        // die($roleController->getRoleByName("admin"));
     }
 }

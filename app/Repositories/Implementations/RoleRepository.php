@@ -7,12 +7,20 @@ class RoleRepository
 
     public function __construct()
     {
-        $this->roleDAO = new RoleDAO();
+        return $this->roleDAO = new RoleDAO();
     }
 
 
     public function create(Role $role)
     {
         $this->roleDAO->create($role);
+    }
+
+    public function findByName(string $roleName)
+    {
+        $query = "SELECT id , role_name , description FROM `roles` where role_name = '" .$roleName. "';";
+        $stmt = Database::getInstance()->getConnection()->prepare($query) ;
+        $stmt->execute();
+        return $stmt->fetchObject(Role::class);
     }
 }

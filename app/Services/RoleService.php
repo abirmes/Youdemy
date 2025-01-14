@@ -13,8 +13,30 @@ class RoleService
 
     public function createRole(Role $role)
     {
-        $this->roleRepository->create($role);
+        if($this->roleRepository->findByName($role->getRoleName()) != null)
+        {
+            throw new Exception("role already exist");
+            
+        }
+        return $this->roleRepository->create($role);
     }
+    public function findRoleByName(string $name)
+    {
+        if($name == "")
+        {
+            throw new Exception("role empty");
+            
+        }
 
+        
+        
+        $role = $this->roleRepository->findByName($name);
+        if($role == null)
+        {
+            throw new Exception("not found in db");
+            
+        }
+        return $role;
+    }
     
 }

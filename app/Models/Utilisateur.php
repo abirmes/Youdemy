@@ -1,9 +1,10 @@
-<?php 
+<?php
 
 // include './../app/Models/Role.php';
 // include './Reservation.php';
 
-class Utilisateur {
+class Utilisateur
+{
     private int $id = 0;
     private string $firstname = "";
     private string $lastname = "";
@@ -16,83 +17,136 @@ class Utilisateur {
     private $cours = [];
     private int $role_id = 0;
 
-    public function __construct () {
+    public function __construct()
+    {
         $this->role = new Role();
     }
 
-    
+    public function __call($name , $args)
+    {
+        if($name == "instanceEtudiantWithoutId")
+        {
+            if(count($args) == 9)
+            {
+                $this->firstname = $args[0];
+                $this->lastname = $args[1];
+                $this->email = $args[2];
+                $this->password = $args[3];
+                $this->phone = $args[4];
+                $this->photo = $args[5];
+                $this->role = $args[6];
+                $this->etat = $args[7];
+                $this->cours = $args[8];
+            }
+        }
+        if($name == "instanceEnseignantWithoutId")
+        {
+            if(count($args) == 8)
+            {
+                $this->firstname = $args[0];
+                $this->lastname = $args[1];
+                $this->email = $args[2];
+                $this->password = $args[3];
+                $this->phone = $args[4];
+                $this->photo = $args[5];
+                $this->role = $args[6];
+                $this->cours = $args[8];
+            }
+        }
+    }
 
 
-    public function setId(int $id): void {
+
+
+    public function setId(int $id): void
+    {
         $this->id = $id;
     }
 
-    public function setFirstname(string $firstname): void {
+    public function setFirstname(string $firstname): void
+    {
         $this->firstname = $firstname;
     }
 
-    public function setLastname(string $lastname): void {
+    public function setLastname(string $lastname): void
+    {
         $this->lastname = $lastname;
     }
 
-    public function setEmail(string $email) :void {
+    public function setEmail(string $email): void
+    {
         $this->email = $email;
     }
 
-    public function setPassword(string $password): void {
+    public function setPassword(string $password): void
+    {
         $this->password = $password;
     }
-    public function setPhone(string $phone):void {
+    public function setPhone(string $phone): void
+    {
         $this->phone = $phone;
     }
 
-    public function setRole(Role $role):void {
+    public function setRole(Role $role): void
+    {
         $this->role = $role;
     }
-    public function setEtat(string $etat):void {
+    public function setEtat(string $etat): void
+    {
         $this->etat = $etat;
     }
 
-    public function setcours(array $cours):void {
+    public function setcours(array $cours): void
+    {
         $this->cours = $cours;
     }
 
-    public function getId(): int{
+    public function getId(): int
+    {
         return $this->id;
     }
 
-    public function getFirstname(): string {
+    public function getFirstname(): string
+    {
         return $this->firstname;
     }
 
-    public function getLastname(): string {
+    public function getLastname(): string
+    {
         return $this->lastname;
     }
 
-    public function getEmail(): string {
+    public function getEmail(): string
+    {
         return $this->email;
     }
 
-    public function getPhone(): string {
+    public function getPhone(): string
+    {
         return $this->phone;
     }
 
-    public function getPassword(): string {
+    public function getPassword(): string
+    {
         return $this->password;
     }
 
-    public function getRole(): Role {
+    public function getRole(): Role
+    {
         return $this->role;
     }
-    public function getetat(): string {
+    public function getetat(): string
+    {
         return $this->etat;
     }
 
-    public function getcours(): array {
+    public function getcours(): array
+    {
         return $this->cours;
     }
 
-    public function getPhoto(): string {
+    public function getPhoto(): string
+    {
         return $this->photo;
     }
     public function getRole_ID(): int
@@ -103,10 +157,16 @@ class Utilisateur {
 
     public function __toString()
     {
-        
+        return "(Utilisateur) => id : " . $this->id .
+         " , firstname : " . $this->firstname .
+          " , lastname : " . $this->lastname .
+           " , phone : " . $this->phone .
+            " , email : " . $this->email  . 
+            " , password : " . $this->password . 
+            " photo : " . $this->photo .
+             " , Role : " . $this->role .
+              " , rours : [" . implode(",", $this->cours) . 
+              "] , Role_ID : " . $this->role_id . "";;
     }
-
-    
-
-    
 }
+

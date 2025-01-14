@@ -9,6 +9,17 @@ class TagService
         $this->tagRepository = new TagRepository;
     }
     public function create(Tag $tag){
-        if($name == "" || )
+         $name = $tag->getName() ;
+        $description = $tag->getDescription() ;
+        if( $name == "" || $description = "" )
+        {
+            throw new Exception("empty field ");
+        }
+        $tag =$this->tagRepository->create($tag);
+        if ($tag->getId()== 0)
+        {
+            throw new Exception("database problem");
+        }
+        return  $tag;
     }
 }

@@ -15,10 +15,16 @@ class TagController
 
         $name = "tag name";
         $descrition = "tag description";
-
         $tag = new Tag();
         $tag->instanceWithoutId($name , $descrition);
-        $tag = $this->tagService->create($tag);
-        return $tag;
+
+        try{
+            $tag = $this->tagService->create($tag);
+        } catch (Exception $e)
+        {
+            echo "message: " .$e->getMessage();
+        }
+        
+        die ($tag);
     }
 }

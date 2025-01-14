@@ -3,12 +3,17 @@ include './../app/Core/database.php';
 include_once './../app/Models/Cour.php';
 include_once './../app/Models/Caracteristiques.php';
 include_once './../app/Models/Categorie.php';
+include_once './../app/Models/Tag.php';
 include './../app/Repositories/Implementations/CategorieRepository.php';
 include './../app/Services/CategorieService.php';
 include './../app/DAOs/CourDao.php';
 include './../app/Repositories/Implementations/CourRepository.php';
 include './../app/Services/CourService.php';
 include './../app/Controllers/CourController.php';
+include './../app/DAOs/TagDAO.php';
+include './../app/Repositories/Implementations/TagRepository.php';
+include './../app/Services/TagService.php';
+include './../app/Controllers/TagController.php';
 
 
 
@@ -41,6 +46,13 @@ class Test
         }
 
         die ($categorie);
+
+    }
+
+    public function testTag()
+    {
+        $tagController = new TagController;
+        $tagController->createTag();
 
     }
 }

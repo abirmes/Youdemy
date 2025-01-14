@@ -21,8 +21,9 @@ class Test
         $categorie->instanceWithName("philosophy");
         // $categorie = $categorieService->findCategorieByName($categorie->getName());
         $cour = new Cour();
-        $cour->instanceWithoutId("test" , "test description" , "test enseignant" , "test contentu" , $categorie , [] ); 
+        $cour->instanceWithoutId("test" , "test description" , "test enseignant" , "test contentu" , $categorie , [] ,[]); 
         $courService = new CourService();
+        
         $courService->createCour($cour);
         die($cour);
 

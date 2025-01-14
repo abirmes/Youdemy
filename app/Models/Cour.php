@@ -12,7 +12,9 @@ class Cour
     private array $tags = [];
 
 
-    public function __construct() {}
+    public function __construct() {
+        $this->categorie = new Categorie();
+    }
 
     public function __call($name, $args)
     {

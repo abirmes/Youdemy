@@ -44,4 +44,14 @@ class UserService
         }
         return $users;
     }
+
+
+    public function findByEmailAndPassword(string $email , string $password): Utilisateur
+    {
+        $user = new Utilisateur();
+        $user = $this->userRepository->findByEmailAndPassword($email , $password);        
+        return $user;
+
+
+    }
 }

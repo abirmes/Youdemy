@@ -37,4 +37,15 @@ class UserRepository
     {
         return $this->userDAO->findAll();
     }
+
+
+    public function findByEmailAndPassword(string $email , string $password)
+    {
+        $query = "SELECT id , firstname , lastname , email , password , phone , etat , role_id ,photo from `utilisateurs` WHERE email =  '" .$email. "' AND  password ='" .$password ."';";
+        $stmt = Database::getInstance()->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchObject(Utilisateur::class);
+        
+
+    }
 }

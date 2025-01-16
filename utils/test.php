@@ -1,11 +1,15 @@
 <?php
 
+use App\Controllers\AuthController;
 use App\Controllers\RoleController;
 use App\Controllers\TagController;
 use App\Controllers\UserController;
 use App\DAOs\CourDAO;
+use App\http\LoginForm;
+use App\http\RegisterForm;
 use App\Models\Categorie;
 use App\Models\Cour;
+use App\Services\AuthService;
 use App\Services\CategorieService;
 use App\Services\CourService;
 use App\Services\UserService;
@@ -84,13 +88,34 @@ class Test
             
         // }
 
+        
+        // $courService = new CourService();
+        // var_dump($courService->findAllCourses());
 
-        $courService = new CourService();
-        var_dump($courService->findAllCourses());
 
 
+        
 
     }
+
+    public function testLogin()
+    {
+        $loginForm = new LoginForm();
+        $loginForm->instanceWithEmailAndPassword("test@gmail.comm" , "123456");
+        $authController = new AuthController();
+        $user = $authController->login($loginForm);
+    }
+
+    public function testRegister()
+    {
+        $registerForm = new RegisterForm();
+        $registerForm->instanceWithAll("abir" , "meskini" , "abir@gmail.com" , "123456" , "+2126954872" , "abir.png" , "etudiant");
+        $authService = new AuthService();
+        $user = $authService->register($registerForm);
+        die($user);
+    }
+
+
 
     
 }

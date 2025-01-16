@@ -24,6 +24,7 @@ class Utilisateur
         $this->role = new Role();
     }
 
+
     public function __call($name , $args)
     {
         if($name == "instanceEtudiantWithoutId")
@@ -53,6 +54,28 @@ class Utilisateur
                 $this->photo = $args[5];
                 $this->role = $args[6];
                 $this->cours = $args[8];
+            }
+        }
+
+        if($name == "instanceWithEmailAndPassword")
+        {
+            if(count($args) == 2)
+            {
+                $this->email = $args[0];
+                $this->password = $args[1];
+            }
+        }
+        if($name == 'instanceForRegister')
+        {
+            if(count($args) == 7)
+            {
+                $this->firstname = $args[0];
+                $this->lastname = $args[1];
+                $this->email = $args[2];
+                $this->password = $args[3];
+                $this->phone = $args[4];
+                $this->photo = $args[5];
+                $this->role = $args[6];
             }
         }
     }

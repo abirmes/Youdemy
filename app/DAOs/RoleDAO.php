@@ -1,5 +1,9 @@
 <?php
 
+namespace App\DAOs;
+
+use App\Core\Database;
+use App\Models\Role;
 
 class RoleDAO
 {
@@ -17,6 +21,14 @@ class RoleDAO
 
 
         return $role;
+    }
+
+    public function findByID(int $id)
+    {
+        $query = "SELECT id , role_name , description FROM `roles` where id = " .$id. ";";
+        $stmt = Database::getInstance()->getConnection()->prepare($query) ;
+        $stmt->execute();
+        return $stmt->fetchObject(Role::class);
     }
 
     

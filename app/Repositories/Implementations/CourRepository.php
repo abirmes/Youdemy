@@ -1,6 +1,8 @@
 <?php
+namespace App\Repositories\Implementations;
 
-
+use App\DAOs\CourDAO;
+use App\Models\Cour;
 
 class CourRepository
 {
@@ -14,6 +16,11 @@ class CourRepository
     public function create(Cour $cour)
     {
         return $this->courDAO->create($cour);
+    }
+
+    public function findAll()
+    {
+        return $this->courDAO->findAll();
     }
 
 }

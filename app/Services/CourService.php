@@ -1,4 +1,8 @@
 <?php
+namespace App\Services;
+
+use App\Models\Cour;
+use App\Repositories\Implementations\CourRepository;
 
 class CourService
 {
@@ -18,6 +22,20 @@ class CourService
         $cour->setCategorie($this->categorieService->findCategorieByName($cour->getCategorie()->getName()));
 
         return $this->courRepository->create($cour);
+    }
+
+
+    public function findAllCourses()
+    {
+        $cours = $this->courRepository->findAll();
+        
+        foreach($cours as $cour){
+            $cour->setRole($this->categorieService->findCategorieById($cour->getcategorie_id()));
+            print ($cour);
+           
+        }
+        die();
+        return $cours;
     }
 
 }

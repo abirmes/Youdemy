@@ -1,6 +1,11 @@
 <?php
 
+namespace App\Controllers;
 
+use App\Models\Role;
+use App\Models\Utilisateur;
+use App\Services\UserService;
+use Exception;
 
 class UserController
 {
@@ -21,14 +26,18 @@ class UserController
         
         $firstname = "test";
         $lastname = "test2";
-        $email = "test@gmail.com";
+        $email = "testttt@gmail.comm";
         $password = "123456";
         $phone = "+212652314895";
         $photo = "test.png";
-        $rolename = "admin";
+        $rolename = "etudiant";
         $etat = "suspension";
         $cours = [];
+
+
         $role = new Role();
+
+
         $role->instanceWithName($rolename);
         $user = new Utilisateur();
         $user->instanceEtudiantWithoutId($firstname,
@@ -40,7 +49,17 @@ class UserController
         $role,
         $etat,
         $cours);
-        return 
+        
+        try{
+            return $this->userService->createEtudiant($user);
+        }catch (Exception $e)
+        {
+            echo "message: ". $e->getMessage();
+        }
+
+
+
+        
 
     }
 }

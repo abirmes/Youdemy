@@ -1,4 +1,9 @@
 <?php
+namespace App\Repositories\Implementations;
+
+use App\Core\Database ;
+use App\DAOs\RoleDAO;
+use App\Models\Role;
 
 class RoleRepository
 {
@@ -23,4 +28,11 @@ class RoleRepository
         $stmt->execute();
         return $stmt->fetchObject(Role::class);
     }
+
+    public function findByID(int $id)
+    {
+        return $this->roleDAO->findByID($id);
+    }
+
+
 }

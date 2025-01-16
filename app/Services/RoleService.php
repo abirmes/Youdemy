@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Services;
+
+use App\Models\Role;
+use App\Repositories\Implementations\RoleRepository;
+use Exception;
 
 class RoleService 
 {
@@ -20,6 +25,8 @@ class RoleService
         }
         return $this->roleRepository->create($role);
     }
+
+
     public function findRoleByName(string $name)
     {
         if($name == "")
@@ -38,5 +45,12 @@ class RoleService
         }
         return $role;
     }
+
+    public function findRoleById(int $id)
+    {
+        return $this->roleRepository->findByID($id);
+
+    }
+
     
 }

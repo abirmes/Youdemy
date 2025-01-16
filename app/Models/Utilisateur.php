@@ -2,6 +2,8 @@
 
 // include './../app/Models/Role.php';
 // include './Reservation.php';
+namespace App\Models;
+
 
 class Utilisateur
 {
@@ -96,9 +98,14 @@ class Utilisateur
         $this->etat = $etat;
     }
 
-    public function setcours(array $cours): void
+    public function setCours(array $cours): void
     {
         $this->cours = $cours;
+    }
+
+    public function setRole_id(int $id)
+    {
+        $this->role_id = $id; 
     }
 
     public function getId(): int
@@ -149,9 +156,9 @@ class Utilisateur
     {
         return $this->photo;
     }
-    public function getRole_ID(): int
+    public function getRole_id(): int
     {
-        return $this->getRole()->getId();
+        return $this->role_id;
     }
 
 

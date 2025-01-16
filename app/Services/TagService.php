@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Services;
+
+use App\Models\Tag;
+use App\Repositories\Implementations\TagRepository;
+use Exception;
 
 class TagService 
 {

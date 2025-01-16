@@ -63,5 +63,6 @@ CREATE Table utilisateur_cour (
 
 
 INSERT INTO categories(name , description) VALUES ("philosophy" , "u think then u exist");
+ALTER TABLE utilisateurs ADD photo VARCHAR(200);
 
 

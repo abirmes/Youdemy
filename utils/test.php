@@ -1,25 +1,25 @@
 <?php
-include './../app/Core/database.php';
-include_once './../app/Models/Cour.php';
-include_once './../app/Models/Caracteristiques.php';
-include_once './../app/Models/Categorie.php';
-include_once './../app/Models/Tag.php';
-include './../app/Repositories/Implementations/CategorieRepository.php';
-include './../app/Services/CategorieService.php';
-include './../app/DAOs/CourDao.php';
-include './../app/Repositories/Implementations/CourRepository.php';
-include './../app/Services/CourService.php';
-include './../app/Controllers/CourController.php';
-include './../app/DAOs/TagDAO.php';
-include './../app/Repositories/Implementations/TagRepository.php';
-include './../app/Services/TagService.php';
-include './../app/Controllers/TagController.php';
-include_once './../app/Models/Role.php';
 
-include './../app/DAOs/RoleDAO.php';
-include './../app/Repositories/Implementations/RoleRepository.php';
-include './../app/Services/RoleService.php';
-include './../app/Controllers/RoleController.php';
+use App\Controllers\RoleController;
+use App\Controllers\TagController;
+use App\Controllers\UserController;
+use App\DAOs\CourDAO;
+use App\Models\Categorie;
+use App\Models\Cour;
+use App\Services\CategorieService;
+use App\Services\CourService;
+use App\Services\UserService;
+
+
+
+require __DIR__ . "\\..\\vendor\\autoload.php";
+
+
+
+
+
+
+
 
 
 
@@ -51,7 +51,7 @@ class Test
             echo "null";
         }
 
-        die ($categorie);
+        return $categorie;
 
     }
 
@@ -69,4 +69,28 @@ class Test
         $roleController->createRole();
         // die($roleController->getRoleByName("admin"));
     }
+
+    public function testUtilisateur()
+    {
+        // $userController = new UserController();
+        // $user = $userController->createEtudiant();
+        // die($user);
+        // $userService = new UserService();
+        // $results = $userService->findAllUsers();
+
+        // foreach($results as $result)
+        // {
+        //     print($result);
+            
+        // }
+
+
+        $courService = new CourService();
+        var_dump($courService->findAllCourses());
+
+
+
+    }
+
+    
 }

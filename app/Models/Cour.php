@@ -114,6 +114,6 @@ class Cour
             . $this->titre . " , description: "
             . $this->description . " , enseignant: " . $this->enseignant .
             " , contenu: " . $this->contenu . " , categorie: " . $this->categorie . " , tags: " . implode(" , ", $this->tags) 
-            . " , utilisateurs: " . implode(" , ", $this->utilisateurs). " .";
+            . " , utilisateurs: " . implode(" , ", $this->utilisateurs). " , categorie_id: " . $this->categorie_id . " .";
     }
 }

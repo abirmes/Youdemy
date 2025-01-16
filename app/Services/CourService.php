@@ -30,7 +30,7 @@ class CourService
         $cours = $this->courRepository->findAll();
         
         foreach($cours as $cour){
-            $cour->setRole($this->categorieService->findCategorieById($cour->getcategorie_id()));
+            $cour->setCategorie($this->categorieService->findCategorieById($cour->getcategorie_id()));
             print ($cour);
            
         }

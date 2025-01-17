@@ -1,5 +1,9 @@
 <?php
 
+namespace App\DAOs;
+
+use App\Core\Database;
+use App\Models\Tag;
 
 class TagDAO{
 

@@ -1,4 +1,5 @@
 <?php
+namespace App\Models;
 
 class Cour
 {
@@ -10,6 +11,7 @@ class Cour
     private Categorie $categorie;
     private array $utilisateurs = [];
     private array $tags = [];
+    private int $categorie_id = 0;
 
 
     public function __construct() {
@@ -100,6 +102,10 @@ class Cour
     {
         return $this->categorie;
     }
+    public function getCategorie_id()
+    {
+        return $this->categorie_id;
+    }
 
 
     public function __toString()
@@ -108,6 +114,6 @@ class Cour
             . $this->titre . " , description: "
             . $this->description . " , enseignant: " . $this->enseignant .
             " , contenu: " . $this->contenu . " , categorie: " . $this->categorie . " , tags: " . implode(" , ", $this->tags) 
-            . " , utilisateurs: " . implode(" , ", $this->utilisateurs). ".";
+            . " , utilisateurs: " . implode(" , ", $this->utilisateurs). " , categorie_id: " . $this->categorie_id . " .";
     }
 }

@@ -1,5 +1,10 @@
 <?php
 
+namespace App\DAOs;
+
+use App\Core\Database;
+use App\Models\Cour;
+use PDO;
 
 class CourDAO
 {
@@ -18,5 +23,14 @@ class CourDAO
 
 
         return $cour;
+    }
+
+    public function findAll()
+    {
+        $query = "SELECT id ,titre , description , enseignant , contenu , categorie_id  FROM `cours` ";
+        $stmt = Database::getInstance()->getConnection()->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_CLASS,Cour::class);
+        return $result;
     }
 }

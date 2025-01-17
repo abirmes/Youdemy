@@ -1,4 +1,9 @@
 <?php
+namespace App\Repositories\Implementations;
+
+use App\Core\Database ;
+use App\DAOs\RoleDAO;
+use App\Models\Role;
 
 class RoleRepository
 {
@@ -7,7 +12,7 @@ class RoleRepository
 
     public function __construct()
     {
-        $this->roleDAO = new RoleDAO();
+        return $this->roleDAO = new RoleDAO();
     }
 
 
@@ -15,4 +20,19 @@ class RoleRepository
     {
         $this->roleDAO->create($role);
     }
+
+    public function findByName(string $roleName)
+    {
+        $query = "SELECT id , role_name , description FROM `roles` where role_name = '" .$roleName. "';";
+        $stmt = Database::getInstance()->getConnection()->prepare($query) ;
+        $stmt->execute();
+        return $stmt->fetchObject(Role::class);
+    }
+
+    public function findByID(int $id)
+    {
+        return $this->roleDAO->findByID($id);
+    }
+
+
 }

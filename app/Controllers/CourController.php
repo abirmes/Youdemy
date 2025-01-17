@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Models\Categorie;
+use App\Models\Cour;
+use App\Services\CourService;
 
 class CourController
 {

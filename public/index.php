@@ -3,5 +3,6 @@ include './../utils/Test.php';
 
         $test = new Test();
 
-        $test->testTg();
+        $test->testRegister();
+        
     ?>

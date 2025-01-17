@@ -51,7 +51,7 @@ class UserController
         $cours);
         
         try{
-            return $this->userService->createEtudiant($user);
+            return $this->userService->createUser($user);
         }catch (Exception $e)
         {
             echo "message: ". $e->getMessage();

@@ -16,7 +16,7 @@ class UserService
         $this->roleService = new RoleService;
     }
 
-    public function createEtudiant(Utilisateur $user)
+    public function createUser(Utilisateur $user)
     {
         $roleName = $user->getRole()->getRoleName();
         if($roleName != "admin " && $roleName != "etudiant" && $roleName != "enseignant" )

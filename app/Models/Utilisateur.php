@@ -2,6 +2,8 @@
 
 // include './../app/Models/Role.php';
 // include './Reservation.php';
+namespace App\Models;
+
 
 class Utilisateur
 {
@@ -21,6 +23,7 @@ class Utilisateur
     {
         $this->role = new Role();
     }
+
 
     public function __call($name , $args)
     {
@@ -51,6 +54,28 @@ class Utilisateur
                 $this->photo = $args[5];
                 $this->role = $args[6];
                 $this->cours = $args[8];
+            }
+        }
+
+        if($name == "instanceWithEmailAndPassword")
+        {
+            if(count($args) == 2)
+            {
+                $this->email = $args[0];
+                $this->password = $args[1];
+            }
+        }
+        if($name == 'instanceForRegister')
+        {
+            if(count($args) == 7)
+            {
+                $this->firstname = $args[0];
+                $this->lastname = $args[1];
+                $this->email = $args[2];
+                $this->password = $args[3];
+                $this->phone = $args[4];
+                $this->photo = $args[5];
+                $this->role = $args[6];
             }
         }
     }
@@ -96,9 +121,14 @@ class Utilisateur
         $this->etat = $etat;
     }
 
-    public function setcours(array $cours): void
+    public function setCours(array $cours): void
     {
         $this->cours = $cours;
+    }
+
+    public function setRole_id(int $id)
+    {
+        $this->role_id = $id; 
     }
 
     public function getId(): int
@@ -149,9 +179,9 @@ class Utilisateur
     {
         return $this->photo;
     }
-    public function getRole_ID(): int
+    public function getRole_id(): int
     {
-        return $this->getRole()->getId();
+        return $this->role_id;
     }
 
 

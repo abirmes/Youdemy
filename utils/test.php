@@ -1,19 +1,29 @@
 <?php
-include './../app/Core/database.php';
-include_once './../app/Models/Cour.php';
-include_once './../app/Models/Caracteristiques.php';
-include_once './../app/Models/Categorie.php';
-include_once './../app/Models/Tag.php';
-include './../app/Repositories/Implementations/CategorieRepository.php';
-include './../app/Services/CategorieService.php';
-include './../app/DAOs/CourDao.php';
-include './../app/Repositories/Implementations/CourRepository.php';
-include './../app/Services/CourService.php';
-include './../app/Controllers/CourController.php';
-include './../app/DAOs/TagDAO.php';
-include './../app/Repositories/Implementations/TagRepository.php';
-include './../app/Services/TagService.php';
-include './../app/Controllers/TagController.php';
+
+use App\Controllers\AuthController;
+use App\Controllers\RoleController;
+use App\Controllers\TagController;
+use App\Controllers\UserController;
+use App\DAOs\CourDAO;
+use App\http\LoginForm;
+use App\http\RegisterForm;
+use App\Models\Categorie;
+use App\Models\Cour;
+use App\Services\AuthService;
+use App\Services\CategorieService;
+use App\Services\CourService;
+use App\Services\UserService;
+
+
+
+require __DIR__ . "\\..\\vendor\\autoload.php";
+
+
+
+
+
+
+
 
 
 
@@ -45,7 +55,7 @@ class Test
             echo "null";
         }
 
-        die ($categorie);
+        return $categorie;
 
     }
 
@@ -55,4 +65,57 @@ class Test
         $tagController->createTag();
 
     }
+
+    public function testRole()
+    {
+
+        $roleController = new RoleController();
+        $roleController->createRole();
+        // die($roleController->getRoleByName("admin"));
+    }
+
+    public function testUtilisateur()
+    {
+        // $userController = new UserController();
+        // $user = $userController->createEtudiant();
+        // die($user);
+        // $userService = new UserService();
+        // $results = $userService->findAllUsers();
+
+        // foreach($results as $result)
+        // {
+        //     print($result);
+            
+        // }
+
+        
+        // $courService = new CourService();
+        // var_dump($courService->findAllCourses());
+
+
+
+        
+
+    }
+
+    public function testLogin()
+    {
+        $loginForm = new LoginForm();
+        $loginForm->instanceWithEmailAndPassword("test@gmail.comm" , "123456");
+        $authController = new AuthController();
+        $user = $authController->login($loginForm);
+    }
+
+    public function testRegister()
+    {
+        $registerForm = new RegisterForm();
+        $registerForm->instanceWithAll("abir" , "meskini" , "abir@gmail.com" , "123456" , "+2126954872" , "abir.png" , "etudiant");
+        $authService = new AuthService();
+        $user = $authService->register($registerForm);
+        die($user);
+    }
+
+
+
+    
 }

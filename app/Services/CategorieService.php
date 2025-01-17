@@ -1,4 +1,7 @@
 <?php
+namespace App\Services;
+
+use App\Repositories\Implementations\CategorieRepository;
 
 class CategorieService
 {
@@ -12,6 +15,12 @@ class CategorieService
     public function findCategorieByName(string $categorie_name)
     {
         return $this->categorieRepository->findCategorieByName($categorie_name);
+    }
+
+
+    public function findCategorieById(int $id)
+    {
+        return $this->categorieRepository->findCategorieById($id);
     }
 
     

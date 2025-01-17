@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Models\Tag;
+use App\Services\TagService;
+use Exception;
 
 class TagController
 {

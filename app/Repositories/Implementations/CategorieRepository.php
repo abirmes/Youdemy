@@ -1,8 +1,19 @@
 <?php
 
+namespace App\Repositories\Implementations;
+
+use App\Core\Database ;
+use App\Models\Categorie;
+use App\Daos\CategorieDAO;
 
 class CategorieRepository
 {
+    private CategorieDAO $categorieDAO;
+    public function __construct()
+    {
+        $this->categorieDAO = new CategorieDAO;
+    }
+    
     public function findCategorieByName(string $categorie_name)
     {
         $query = "SELECT id , name , description from categories where name = '".$categorie_name."';";
@@ -10,5 +21,10 @@ class CategorieRepository
         $stmt->execute();
         $result = $stmt->fetchObject(Categorie::class);
         return $result;
+    }
+
+    public function findCategorieById(int $id)
+    {
+        return $this->categorieDAO->findById($id);
     }
 }

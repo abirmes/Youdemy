@@ -1,8 +1,5 @@
 <?php
 
-// include './../app/Models/Role.php';
-// include './Reservation.php';
-namespace App\Models;
 
 
 class Utilisateur

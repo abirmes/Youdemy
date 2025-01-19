@@ -1,11 +1,5 @@
 <?php
 
-namespace App\Controllers;
-
-use App\Models\Role;
-use App\Models\Utilisateur;
-use App\Services\UserService;
-use Exception;
 
 class UserController
 {

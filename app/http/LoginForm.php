@@ -1,6 +1,5 @@
 <?php
 
-namespace App\http;
 
 class LoginForm
 {

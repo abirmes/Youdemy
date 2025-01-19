@@ -1,9 +1,5 @@
 <?php
 
-namespace App\DAOs;
-
-use App\Core\Database;
-use App\Models\Role;
 
 class RoleDAO
 {

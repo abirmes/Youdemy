@@ -1,11 +1,5 @@
 <?php
 
-namespace App\Repositories\Implementations;
-
-use App\Core\Database ;
-use App\Models\Categorie;
-use App\Daos\CategorieDAO;
-
 class CategorieRepository
 {
     private CategorieDAO $categorieDAO;

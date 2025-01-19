@@ -1,9 +1,5 @@
 <?php
-namespace App\Repositories\Implementations;
 
-use App\Core\Database ;
-use App\DAOs\RoleDAO;
-use App\Models\Role;
 
 class RoleRepository
 {

@@ -1,8 +1,5 @@
 <?php
-namespace App\Repositories\Implementations;
 
-use App\DAOs\TagDAO;
-use App\Models\Tag;
 
 class TagRepository
 {

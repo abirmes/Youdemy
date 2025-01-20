@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+	
   	<title>Login 10</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,10 +10,10 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="./../../views/auth/css/style.css">
+	<link rel="stylesheet" href="auth/css/style.css">
 
 	</head>
-	<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+	<body class="img js-fullheight" style="background-image: url(auth/images/bg.jpg);">
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -20,6 +21,17 @@
 					<h2 class="heading-section">Login</h2>
 				</div>
 			</div>
+			<?php 
+			
+			
+
+			
+			
+			
+			
+			
+			
+			// echo __DIR__.'../..dashboard.php'; ?>
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
@@ -58,10 +70,10 @@
 		</div>
 	</section>
 
-	<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+	<script src="auth/js/jquery.min.js"></script>
+  <script src="auth/js/popper.js"></script>
+  <script src="auth/js/bootstrap.min.js"></script>
+  <script src="auth/js/main.js"></script>
 
 	</body>
 </html>

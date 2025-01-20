@@ -1,8 +1,5 @@
 <?php
-namespace App\Services;
 
-use App\Models\Cour;
-use App\Repositories\Implementations\CourRepository;
 
 class CourService
 {
@@ -30,11 +27,8 @@ class CourService
         $cours = $this->courRepository->findAll();
         
         foreach($cours as $cour){
-            $cour->setCategorie($this->categorieService->findCategorieById($cour->getcategorie_id()));
-            print ($cour);
-           
+            $cour->setCategorie($this->categorieService->findCategorieById($cour->getcategorie_id()));           
         }
-        die();
         return $cours;
     }
 

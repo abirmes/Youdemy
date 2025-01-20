@@ -2,11 +2,6 @@
 
 
 
-// use App\http\LoginForm;
-// use App\http\RegisterForm;
-// use App\Services\AuthService;
-// include './../Services/AuthService.php';
-// use Exception;
 
 class AuthController
 {
@@ -47,7 +42,8 @@ class AuthController
             echo "message: " . $e->getMessage();
         }
 
-        header('location: dashboard');
+        header('location: /dash');
+        // exit();
     }
 
     public function logout()

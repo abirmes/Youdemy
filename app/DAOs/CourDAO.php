@@ -1,10 +1,5 @@
 <?php
 
-namespace App\DAOs;
-
-use App\Core\Database;
-use App\Models\Cour;
-use PDO;
 
 class CourDAO
 {

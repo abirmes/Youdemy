@@ -1,8 +1,5 @@
 <?php
-namespace App\Daos;
 
-use App\Core\Database;
-use App\Models\Categorie;
 
 
 

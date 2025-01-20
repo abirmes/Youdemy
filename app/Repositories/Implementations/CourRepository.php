@@ -1,8 +1,4 @@
 <?php
-namespace App\Repositories\Implementations;
-
-use App\DAOs\CourDAO;
-use App\Models\Cour;
 
 class CourRepository
 {

@@ -14,25 +14,40 @@ include './../app/Repositories/Implementations/RoleRepository.php';
 include './../app/DAOs/RoleDAO.php';
 include './../app/Models/Utilisateur.php';
 include './../app/Models/Role.php';
+include './../app/Models/Cour.php';
+include './../app/Models/Caracteristiques.php';
+include './../app/Models/Categorie.php';
 
 
-$path = $_SERVER['REQUEST_URI'];
+include './../app/Controllers/CourController.php';
+include './../app/DAOs/CourDAO.php';
+
+include './../app/Repositories/Implementations/CourRepository.php';
+
+include './../app/Services/CourService.php';
+
+include './../app/Controllers/CategorieController.php';
+include './../app/DAOs/CategorieDAO.php';
+
+include './../app/Repositories/Implementations/CategorieRepository.php';
+
+include './../app/Services/CategorieService.php';
+
+
+define('PROJECT_ROOT', dirname(dirname(__DIR__ . '/../')));
+
+
+$path = rtrim($_SERVER['REQUEST_URI']);
 $method = strtolower($_SERVER['REQUEST_METHOD']);
 
-
-
-
-switch ($path)
-{
-    case '/login' :
-        if($method == 'get')
-        {
+switch ($path) {
+    case '/login':
+        if ($method == 'get') {
             include './../views/auth/login.php';
         }
 
-        if($method == 'post')
-        {
-            
+        if ($method == 'post') {
+
             $loginForm = new LoginForm();
             $loginForm->instanceWithEmailAndPassword(
                 $_REQUEST['email'],
@@ -40,26 +55,27 @@ switch ($path)
             );
 
             (new AuthController())->login($loginForm);
-
         }
         break;
-    case '/dashboard':
-        include './../views/admin/nice-html/ltr/icon-material.php';
+    case '/dash':
+
+        include PROJECT_ROOT . '/views/admin/nice-html/ltr/table-basic.php';
         break;
-    case '/register' : 
-        if($method == 'get')
-        {
+    case '/':
+
+        include PROJECT_ROOT . '/views/admin/nice-html/ltr/homepage.php';
+        break;
+    case '/register':
+        if ($method == 'get') {
             include './../views/auth/register.php';
         }
 
-        if($method == 'post')
-        {
+        if ($method == 'post') {
             $registerForm = new RegisterForm();
 
             $registerForm->instanceWithAll(
                 $_REQUEST['firstname'],
                 $_REQUEST['lastname'],
-                
                 $_REQUEST['email'],
                 $_REQUEST['password'],
                 $_REQUEST['phone'],

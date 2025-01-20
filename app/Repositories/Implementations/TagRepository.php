@@ -1,8 +1,5 @@
 <?php
-namespace App\Repositories\Implementations;
 
-use App\DAOs\TagDAO;
-use App\Models\Tag;
 
 class TagRepository
 {
@@ -15,5 +12,14 @@ class TagRepository
     public function create(Tag $tag)
     {
         return $this->tagDAO->create($tag);
+    }
+
+    public function findAll()
+    {
+        return $this->tagDAO->findAll();
+    }
+    public function delete(int $id)
+    {
+        $this->tagDAO->delete($id);
     }
 }

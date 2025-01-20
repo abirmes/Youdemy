@@ -1,10 +1,6 @@
 <?php 
 
-namespace App\Services;
 
-use App\Models\Utilisateur;
-use App\Repositories\Implementations\UserRepository;
-use Exception;
 
 class UserService
 {

@@ -1,8 +1,5 @@
 <?php
 
-// include './../app/Models/Role.php';
-// include './Reservation.php';
-namespace App\Models;
 
 
 class Utilisateur
@@ -80,8 +77,20 @@ class Utilisateur
         }
     }
 
-
-
+    public function getAttributes() : array {
+        return [
+            'id',
+            'firstname',
+            'lastname',
+            'email',
+            'password',
+            'phone',
+            'photo',
+            'role',
+            'etat',
+            'role_id'
+        ];
+    }
 
     public function setId(int $id): void
     {

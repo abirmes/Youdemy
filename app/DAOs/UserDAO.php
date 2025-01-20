@@ -1,10 +1,6 @@
 <?php 
-namespace App\DAOs;
 
-use App\Core\Database;
-use App\Models\Utilisateur;
 
-use PDO;
 
 class UserDAO
 {

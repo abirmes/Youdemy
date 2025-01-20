@@ -1,13 +1,6 @@
 <?php
 
 
-namespace App\Services;
-
-use App\http\LoginForm;
-use App\http\RegisterForm;
-use App\Models\Role;
-use App\Models\Utilisateur;
-use Exception;
 
 class AuthService
 {
@@ -52,11 +45,10 @@ class AuthService
             $registerForm->getPhoto(),
             $role
         );
-        if($user->getRole()->getRoleName() == 'etudiant')
-        {
-        $user = $this->userService->createEtudiant($user);
+        
+        $user = $this->userService->createUser($user);
 
-        }
+        
         return $user;
 
 

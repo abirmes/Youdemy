@@ -1,5 +1,5 @@
 <?php
-namespace App\Models;
+
 
 class Cour
 {
@@ -34,6 +34,20 @@ class Cour
 
             }
         }
+    }
+
+    public function getAttributes() : array {
+        return [
+            'id',
+            'titre',
+            'description',
+            'enseignant',
+            'contenu',
+            'etudiant',
+            'tags',
+            'categorie',
+            'categori id'
+        ];
     }
 
 

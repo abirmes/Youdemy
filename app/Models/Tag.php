@@ -1,5 +1,4 @@
 <?php
-namespace App\Models;
 
 
 class Tag extends Caracteristiques
@@ -14,4 +13,6 @@ class Tag extends Caracteristiques
             }
         }
     }
+
+    
 }

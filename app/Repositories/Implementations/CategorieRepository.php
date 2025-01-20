@@ -1,11 +1,5 @@
 <?php
 
-namespace App\Repositories\Implementations;
-
-use App\Core\Database ;
-use App\Models\Categorie;
-use App\Daos\CategorieDAO;
-
 class CategorieRepository
 {
     private CategorieDAO $categorieDAO;
@@ -26,5 +20,10 @@ class CategorieRepository
     public function findCategorieById(int $id)
     {
         return $this->categorieDAO->findById($id);
+    }
+
+    public function findAll()
+    {
+        return $this->categorieDAO->findAll();
     }
 }

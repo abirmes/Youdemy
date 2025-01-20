@@ -1,11 +1,5 @@
 <?php
 
-namespace App\Controllers;
-
-use App\Models\Role;
-use App\Models\Utilisateur;
-use App\Services\UserService;
-use Exception;
 
 class UserController
 {
@@ -21,7 +15,7 @@ class UserController
 
     }
 
-    public function createEtudiant()
+    public function create()
     {
         
         $firstname = "test";
@@ -57,9 +51,13 @@ class UserController
             echo "message: ". $e->getMessage();
         }
 
-
+        
 
         
 
     }
+    public function showAllUsers()
+        {
+            return $this->userService->findAllUsers();
+        }
 }

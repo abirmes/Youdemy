@@ -10,11 +10,12 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="auth/css/style.css">
 
 </head>
 
-<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+<body class="img js-fullheight" style="background-image: url(auth/images/bg.jpg);">
+    <?php echo __DIR__; ?>
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -25,34 +26,34 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap p-0">
-                        <form action="#" method="post" class="signin-form">
+                        <form action="/register" method="post" class="signin-form">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="firstname" required>
+                                <input type="text" name="firstname" class="form-control" placeholder="firstname" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="lastname" required>
+                                <input type="text" name="lastname" class="form-control" placeholder="lastname" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="phone number" required>
+                                <input type="text" name="email" class="form-control" placeholder="email" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="photo url" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="email" required>
-                            </div>
-                            <div class="form-group">
-                                <input id="password-field" type="password" class="form-control" placeholder="Password" required>
+                                <input id="password-field" name="password" type="password" class="form-control" placeholder="Password" required>
                                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
+                            <div class="form-group">
+                                <input type="text" name="phone" class="form-control" placeholder="phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="photo" class="form-control" placeholder="photo url" required>
+                            </div>
                             <div class="form-check">
-                                <input class="form-check-input" value="etudiant" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <input class="form-check-input" value="etudiant" type="radio" name="user" id="flexRadioDefault1">
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Etudiant
                                 </label>
                             </div>
                             <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" value="enseignant" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                <input class="form-check-input" type="radio" value="enseignant" name="user" id="flexRadioDefault2" checked>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Enseignant
                                 </label>
@@ -67,10 +68,10 @@
         </div>
     </section>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="auth/js/jquery.min.js"></script>
+    <script src="auth/js/popper.js"></script>
+    <script src="auth/js/bootstrap.min.js"></script>
+    <script src="auth/js/main.js"></script>
 
 </body>
 

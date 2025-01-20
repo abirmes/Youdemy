@@ -1,7 +1,6 @@
 <?php
 
 
-namespace App\http;
 
 class RegisterForm
 {
@@ -19,12 +18,6 @@ class RegisterForm
 
     public function __call($name, $args)
     {
-        if ($name == 'instanceWithEmailAndPassword') {
-            if (count($args) == 2) {
-                $this->firstname = $args[0];
-                $this->lastname = $args[1];
-            }
-        }
 
         if($name == 'instanceWithAll')
         {

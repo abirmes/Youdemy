@@ -1,6 +1,5 @@
 <?php
 
-namespace App\Models;
 
 
 abstract class Caracteristiques
@@ -11,6 +10,14 @@ abstract class Caracteristiques
 
 
     public function __construct(){}
+    public function getAttributes(): array 
+    {
+        return [
+            'id',
+            'name',
+            'description'
+        ];
+    }
 
 
 

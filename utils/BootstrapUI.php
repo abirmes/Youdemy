@@ -6,7 +6,7 @@ class BootstrapUI
     public static function table(array $list): string
     {
         return '
-        <a class="btn btn-primary w-100"> Ajouter </a>
+        <a class="btn btn-primary w-100" href = "/cour/create"> Ajouter </a>
         <div class="table-responsive">
             <table class="table">
                 <thead>
@@ -86,15 +86,14 @@ class BootstrapUI
 
     public static function form($object): string
 {
-    $form = '<form method="POST" action="/' . get_class($object) . '/save">';
+    $form = '<form method="POST" action="/' . get_class($object) . '/create">';
     
-    // Loop through the attributes of the object to create input fields
     foreach ($object->getAttributes() as $attribute) {
-        $form .= self::inputField($attribute, $object);
+        $form .= self::input($attribute, $object);
     }
 
     // Add a submit button
-    $form .= '<button type="submit" class="btn btn-primary">Save</button>';
+    $form .= '<input value= "Save" type="submit" class="btn btn-primary">';
     
     $form .= '</form>';
     
@@ -103,8 +102,8 @@ class BootstrapUI
 
 public static function input($attribute, $object): string
 {
-    $value = $object->$attribute ?? ''; // Get the current value or empty string
-    $input = '<div class="mb-3">';
+    $value = $object->$attribute; 
+    $input = '<div class="form-group">';
     $input .= '<label for="' . $attribute . '" class="form-label">' . ucfirst($attribute) . '</label>';
     $input .= '<input type="text" class="form-control" id="' . $attribute . '" name="' . $attribute . '" value="' . $value . '">';
     $input .= '</div>';
@@ -117,20 +116,6 @@ public static function input($attribute, $object): string
 
 
 
-    public static function add(array $list)
-    {
-        return '
-        <form>
-            <div class="form-group">
-                <label for=""></label> 
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        ';
-    }
-    public static function input()
-    {
-
-    }
+    
+   
 }

@@ -28,4 +28,13 @@ class CourDAO
         $result = $stmt->fetchAll(PDO::FETCH_CLASS,Cour::class);
         return $result;
     }
+
+    public function update(Cour $cour)
+    {
+        $query = "UPDATE cours SET titre = '" .$cour->getTitre() ."', description = '" .$cour->getDescription() ."', enseignant = '" .$cour->getEnseignant() ."', contenu = '" .$cour->getContenu() ."', categorie_id = '" .$cour->getCategorie_id() ."' WHERE id = '" .$cour->getId() ."'";
+        $stmt = Database::getInstance()->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_CLASS,Cour::class);
+    
+    }
 }

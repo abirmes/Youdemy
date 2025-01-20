@@ -55,11 +55,11 @@ define('PROJECT_ROOT', dirname(dirname(__DIR__ . '/../')));
 $path = rtrim($_SERVER['REQUEST_URI']);
 $method = strtolower($_SERVER['REQUEST_METHOD']);
 
-if (substr_count($path, '/') == 3 ) {
-    $pathSlashRemoved = substr($path, - (strlen($path)-1));
+if (substr_count($path, '/') == 3) {
+    $pathSlashRemoved = substr($path, - (strlen($path) - 1));
     $pathList = explode('/', $pathSlashRemoved);
 
-    $controllerName = $pathList[0].'Controller';
+    $controllerName = $pathList[0] . 'Controller';
     $controller = new $controllerName();
 
     $controller->{$pathList[1]}($pathList[2]);
@@ -89,12 +89,14 @@ switch ($path) {
         break;
     case '/utilisateur':
         $adminController = new AdminController();
-
         $adminController->utilisateurs();
+        break;
+    case '/cour/create':
+        $adminController = new AdminController();
+        $adminController->createCourse(); // Show form to create a new tag
         break;
     case '/tag':
         $adminController = new AdminController();
-
         $adminController->tags();
         break;
     case '/':
@@ -136,7 +138,4 @@ switch ($path) {
     case 'starter-kit':
         include PROJECT_ROOT . '/views/admin/nice-html/ltr/starter-kit.php';
         break;
-    
 }
-
-

@@ -14,7 +14,7 @@ class CourController
 
     public function createCour()
     {
-        $titre = "test";
+        $titre = $_REQUEST['name'];
         $description = "test description";
         $enseignant = "test enseignant";
         $contenu = "test contenu";

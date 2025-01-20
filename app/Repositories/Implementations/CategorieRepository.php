@@ -21,4 +21,9 @@ class CategorieRepository
     {
         return $this->categorieDAO->findById($id);
     }
+
+    public function findAll()
+    {
+        return $this->categorieDAO->findAll();
+    }
 }

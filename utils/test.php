@@ -1,23 +1,5 @@
 <?php
 
-use App\Controllers\AuthController;
-use App\Controllers\RoleController;
-use App\Controllers\TagController;
-use App\Controllers\UserController;
-use App\DAOs\CourDAO;
-use App\http\LoginForm;
-use App\http\RegisterForm;
-use App\Models\Categorie;
-use App\Models\Cour;
-use App\Services\AuthService;
-use App\Services\CategorieService;
-use App\Services\CourService;
-use App\Services\UserService;
-
-
-
-require __DIR__ . "\\..\\vendor\\autoload.php";
-
 
 
 

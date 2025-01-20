@@ -13,4 +13,13 @@ class TagRepository
     {
         return $this->tagDAO->create($tag);
     }
+
+    public function findAll()
+    {
+        return $this->tagDAO->findAll();
+    }
+    public function delete(int $id)
+    {
+        $this->tagDAO->delete($id);
+    }
 }

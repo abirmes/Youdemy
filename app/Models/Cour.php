@@ -36,6 +36,20 @@ class Cour
         }
     }
 
+    public function getAttributes() : array {
+        return [
+            'id',
+            'titre',
+            'description',
+            'enseignant',
+            'contenu',
+            'etudiant',
+            'tags',
+            'categorie',
+            'categori id'
+        ];
+    }
+
 
     public function setId(int $id): void
     {

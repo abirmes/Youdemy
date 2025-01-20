@@ -15,7 +15,7 @@ class UserController
 
     }
 
-    public function createEtudiant()
+    public function create()
     {
         
         $firstname = "test";
@@ -51,9 +51,13 @@ class UserController
             echo "message: ". $e->getMessage();
         }
 
-
+        
 
         
 
     }
+    public function showAllUsers()
+        {
+            return $this->userService->findAllUsers();
+        }
 }

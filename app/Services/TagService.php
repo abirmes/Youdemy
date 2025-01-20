@@ -23,4 +23,14 @@ class TagService
         }
         return  $tag;
     }
+
+    public function findAll()
+    {
+        return $this->tagRepository->findAll();
+    }
+
+    public function delete(int $id)
+    {
+        $this->tagRepository->delete($id);
+    }
 }

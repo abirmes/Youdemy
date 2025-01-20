@@ -20,7 +20,10 @@ class CategorieService
     {
         return $this->categorieRepository->findCategorieById($id);
     }
-
+    public function findAll()
+    {
+        return $this->categorieRepository->findAll();
+    }
     
 
 

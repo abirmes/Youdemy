@@ -3,8 +3,8 @@
 
 class LoginForm
 {
-    private string $email;
-    private string $password;
+    public string $email;
+    public string $password;
 
 
     public function __construct()

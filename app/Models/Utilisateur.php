@@ -77,8 +77,20 @@ class Utilisateur
         }
     }
 
-
-
+    public function getAttributes() : array {
+        return [
+            'id',
+            'firstname',
+            'lastname',
+            'email',
+            'password',
+            'phone',
+            'photo',
+            'role',
+            'etat',
+            'role_id'
+        ];
+    }
 
     public function setId(int $id): void
     {

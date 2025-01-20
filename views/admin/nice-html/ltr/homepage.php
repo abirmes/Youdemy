@@ -114,26 +114,7 @@
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
-                    <ul class="navbar-nav float-end">
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="dashboard/assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user me-1 ms-1"></i>
-                                    My Profile</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet me-1 ms-1"></i>
-                                    My Balance</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email me-1 ms-1"></i>
-                                    Inbox</a>
-                            </ul>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
+                    <ul class="btn btn-md btn-danger float-end">  logout
                     </ul>
                 </div>
             </nav>
@@ -151,49 +132,49 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php"
                                 aria-expanded="false">
                                 <i class="mdi mdi-av-timer"></i>
-                                <span class="hide-menu">Dashboard</span>
+                                <span class="hide-menu">Home</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-profile.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-profile.php"
                                 aria-expanded="false">
                                 <i class="mdi mdi-account-network"></i>
                                 <span class="hide-menu">Profile</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="form-basic.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="form-basic.php"
                                 aria-expanded="false">
                                 <i class="mdi mdi-arrange-bring-forward"></i>
                                 <span class="hide-menu">Form Basic</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="table-basic.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="table-basic.php"
                                 aria-expanded="false">
                                 <i class="mdi mdi-border-none"></i>
                                 <span class="hide-menu">Table</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="icon-material.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="icon-material.php"
                                 aria-expanded="false">
                                 <i class="mdi mdi-face"></i>
                                 <span class="hide-menu">Icon</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="starter-kit.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="starter-kit.php"
                                 aria-expanded="false">
                                 <i class="mdi mdi-file"></i>
                                 <span class="hide-menu">Blank</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="error-404.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="error-404.php"
                                 aria-expanded="false">
                                 <i class="mdi mdi-alert-outline"></i>
                                 <span class="hide-menu">404</span>
@@ -218,7 +199,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-5 align-self-center">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">Welcome to Youdemy courses !</h4>
                     </div>
                     <div class="col-7 align-self-center">
                         <div class="d-flex align-items-center justify-content-end">
@@ -244,46 +225,7 @@
                 <!-- ============================================================== -->
                 <!-- Email campaign chart -->
                 <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Sales Ratio</h4>
-                                <div class="sales ct-charts mt-3"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title mb-1">Referral Earnings</h5>
-                                <h3 class="font-light">$769.08</h3>
-                                <div class="mt-3 text-center">
-                                    <div id="earnings"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-0">Users</h4>
-                                <h2 class="font-light">35,658 <span class="font-16 text-success font-medium">+23%</span>
-                                </h2>
-                                <div class="mt-4">
-                                    <div class="row text-center">
-                                        <div class="col-6 border-right">
-                                            <h4 class="mb-0">58%</h4>
-                                            <span class="font-14 text-muted">New Users</span>
-                                        </div>
-                                        <div class="col-6">
-                                            <h4 class="mb-0">42%</h4>
-                                            <span class="font-14 text-muted">Repeat Users</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- ============================================================== -->
                 <!-- Email campaign chart -->
                 <!-- ============================================================== -->
@@ -308,10 +250,7 @@
                                             <th class="border-top-0">tags</th>
                                         </tr>
                                     </thead>
-                                    <?php $courses = (new CourController())->showAllCourses();  
-                                    
-                                    
-                                    ?>
+                                    <?php $courses = (new CourController())->showAllCourses();?>
                                     <tbody>
                                         <tr>
                                             <?php foreach ($courses as $course) {

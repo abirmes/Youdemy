@@ -18,14 +18,22 @@ class TagController
         $descrition = "tag description";
         $tag = new Tag();
         $tag->instanceWithoutId($name , $descrition);
+        
 
         try{
             $tag = $this->tagService->create($tag);
+            return $tag;
         } catch (Exception $e)
         {
             echo "message: " .$e->getMessage();
         }
         
-        die ($tag);
+    }
+
+    public function delete(int $id)
+    {
+        $this->tagService->delete($id);
+
+        header('location: /tag');
     }
 }
